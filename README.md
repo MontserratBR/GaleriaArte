@@ -1,3 +1,4 @@
+
 # GaleriaDeArte
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
@@ -57,3 +58,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# GaleriaArte
+3d52c0c366c06866952e5b6da47ac4b7d6e2df78
