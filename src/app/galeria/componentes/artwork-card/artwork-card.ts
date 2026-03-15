@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-artwork-card',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './artwork-card.css',
 })
 export class ArtworkCard {
-
+ @Input({ required: true }) artwork: any;
 }

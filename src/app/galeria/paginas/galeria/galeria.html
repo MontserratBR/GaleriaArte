@@ -1,1 +1,6 @@
-<p>galeria works!</p>
+<div class="grid-container">
+  @for (item of artworks(); track item.id) {
+    <app-artwork-card [artwork]="item" />
+    <br>
+  }
+</div>

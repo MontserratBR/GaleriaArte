@@ -1,1 +1,20 @@
-<p>artwork-card works!</p>
+<div class="card">
+  <img [src]="artwork.edmPreview?.[0]" [alt]="artwork.title?.[0]">
+  
+  <div class="card-content">
+    <h3>{{ artwork.title?.[0] || 'Sin título' }}</h3>
+    
+    @if (artwork.dcDescription && artwork.dcDescription.length > 0) {
+      <p class="description">
+        {{ artwork.dcDescription[0] }}
+      </p>
+    } @else {
+      <p class="no-description">No hay descripción disponible para esta obra.</p>
+    }
+
+    <p class="author">
+      <strong>Autor:</strong> 
+      {{ artwork.dcCreator ? artwork.dcCreator[0] : 'Autor desconocido' }}
+    </p>
+  </div>
+</div>
