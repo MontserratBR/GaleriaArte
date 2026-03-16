@@ -1,15 +1,15 @@
 <div class="card">
-  <img [src]="artwork.edmPreview?.[0]" [alt]="artwork.title?.[0]">
+  <img class="card-img-top" [src]="artwork.edmPreview?.[0]" [alt]="artwork.title?.[0]">
+  <div class="card-body">
   
-  <div class="card-content">
-    <h3>{{ artwork.title?.[0] || 'Sin título' }}</h3>
+    <h5 class="card-title">{{ artwork.title?.[0] || 'Sin título' }}</h5>
     
     @if (artwork.dcDescription && artwork.dcDescription.length > 0) {
-      <p class="description">
+      <p class="card-text">
         {{ artwork.dcDescription[0] }}
       </p>
     } @else {
-      <p class="no-description">No hay descripción disponible para esta obra.</p>
+      <p class="no-description card-text" >No hay descripción disponible para esta obra.</p>
     }
 
     <p class="author">
@@ -17,4 +17,4 @@
       {{ artwork.dcCreator ? artwork.dcCreator[0] : 'Autor desconocido' }}
     </p>
   </div>
-</div>
+  </div>

@@ -1,12 +1,14 @@
 .card {
   transition: transform 0.2s;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card:hover {
   transform: scale(1.03);
 }
-
-.card-img-top {
-  height: 200px;
-  
+img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px ;
 }
