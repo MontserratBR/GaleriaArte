@@ -3,7 +3,9 @@
   <div class="card-body">
   
     <h5 class="card-title">{{ artwork.title?.[0] || 'Sin título' }}</h5>
-    
+    <button (click)="toggleFav()" class="btn btn-link p-0 text-warning fs-4">
+      <i [class] = "esFav() ? 'bi bi-star-fill' : 'bi bi-star'">*</i>
+    </button>
     @if (artwork.dcDescription && artwork.dcDescription.length > 0) {
       <p class="card-text">
         {{ artwork.dcDescription[0] }}
@@ -16,5 +18,6 @@
       <strong>Autor:</strong> 
       {{ artwork.dcCreator ? artwork.dcCreator[0] : 'Autor desconocido' }}
     </p>
+
   </div>
   </div>

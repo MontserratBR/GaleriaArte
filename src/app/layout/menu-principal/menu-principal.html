@@ -7,10 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link " routerLink="/inicio" routerLinkActive="active"  aria-current="page" >Galería</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Favoritos</a>
+          <a class="nav-link" routerLink="/favoritos" routerLinkActive="active">Favoritos
+            <span class="badge rounded-pill bg-danger">
+                {{ favService.favoritos().length }}
+            </span>
+          </a>
         </li>
 
       </ul>

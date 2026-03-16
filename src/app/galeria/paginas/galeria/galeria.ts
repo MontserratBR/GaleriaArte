@@ -4,9 +4,10 @@ import { ArtworkCard } from '../../componentes/artwork-card/artwork-card';
 import { CommonModule } from '@angular/common';
 import { computed } from '@angular/core';
 import { Carousel } from '../../componentes/carousel/carousel';
+import { MenuPrincipal } from "../../../layout/menu-principal/menu-principal";
 @Component({
   selector: 'app-galeria',
-  imports: [ArtworkCard,CommonModule,Carousel],
+  imports: [ArtworkCard, CommonModule, Carousel, MenuPrincipal],
   templateUrl: './galeria.html',
   styleUrl: './galeria.css',
 })
@@ -15,9 +16,6 @@ export class Galeria implements OnInit {
   
   artworks = signal<any[]>([]);
   isLoading = signal(false); // Candado para evitar peticiones duplicadas
-
-  // Señal para el carrusel: Siempre tendrá solo las primeras 5
-  // Esta es la que debes pasarle al componente del carrusel
   featuredArtworks = computed(() => this.artworks().slice(0, 5));
 
   ngOnInit() {

@@ -19,11 +19,7 @@ export class Europeana {
     }
 
     const query = termino || this.famosos[Math.floor(Math.random() * this.famosos.length)];
-    
-    // Simplificamos los filtros para asegurar que traiga resultados:
-    // 1. TYPE:IMAGE es vital.
-    // 2. Quitamos WHAT:painting y LANGUAGE:es momentáneamente para probar.
-    // 3. Usamos reusability:open que suele traer objetos con mejor descripción.
+  
     const filtros = '&qf=TYPE:IMAGE&qf=proxy_dc_description:*&reusability=open';
     
     const url = `${environment.europeanaUrl}?query=${query}${filtros}&rows=20&start=${this.currentStart}&wskey=${environment.apiKey}`;
@@ -32,7 +28,6 @@ export class Europeana {
 
     return this.http.get<EuropeanaResponse>(url).pipe(
       map(res => {
-        // Verificamos si realmente hay items
         if (!res.items || res.items.length === 0) {
           console.warn('La API no devolvió resultados para:', query);
           return [];

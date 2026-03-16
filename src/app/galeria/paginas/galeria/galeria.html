@@ -1,8 +1,9 @@
+<app-menu-principal></app-menu-principal>
 <app-carousel [artworks]="featuredArtworks"></app-carousel>
 
 <hr>
 <div class="container">
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-3 g-4 " data-masonry='{"percentPosition": true }'>
   @for (item of artworks(); track item.id) {
     <div class="col">
       <app-artwork-card [artwork]="item"></app-artwork-card>
