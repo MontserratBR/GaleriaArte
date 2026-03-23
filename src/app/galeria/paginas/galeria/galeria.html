@@ -3,7 +3,7 @@
 
 <hr>
 <div class="container">
-<div class="row row-cols-1 row-cols-md-3 g-4 " data-masonry='{"percentPosition": true }'>
+<div #miGrilla class="row row-cols-1 row-cols-md-3 g-5" >
   @for (item of artworks(); track item.id) {
     <div class="col">
       <app-artwork-card [artwork]="item"></app-artwork-card>

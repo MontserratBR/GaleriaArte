@@ -12,3 +12,11 @@ img {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px ;
 }
+
+.corazon-click {
+  transition: transform 0.2s ease-in-out;
+}
+
+.corazon-click:active {
+  transform: scale(1.4); /* El corazón se agranda un poco al hacerle click */
+}

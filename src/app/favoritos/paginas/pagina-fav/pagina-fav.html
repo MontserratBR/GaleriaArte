@@ -3,7 +3,7 @@
       <h2>Mis Obras Favoritas</h2>
       <hr>
       
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div #miGrilla class="row row-cols-1 row-cols-md-3 g-4">
         @for (obra of favService.favoritos(); track obra.id) {
           <div class="col">
             <app-artwork-card [artwork]="obra"></app-artwork-card>

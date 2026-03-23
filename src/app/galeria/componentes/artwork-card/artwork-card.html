@@ -3,9 +3,10 @@
   <div class="card-body">
   
     <h5 class="card-title">{{ artwork.title?.[0] || 'Sin título' }}</h5>
-    <button (click)="toggleFav()" class="btn btn-link p-0 text-warning fs-4">
-      <i [class] = "esFav() ? 'bi bi-star-fill' : 'bi bi-star'">*</i>
+    <button (click)="toggleFav()" class="btn btn-link p-0 text-danger fs-4">
+      <i class="corazon-click" [class]="esFav() ? 'bi bi-heart-fill' : 'bi bi-heart'"></i>
     </button>
+   
     @if (artwork.dcDescription && artwork.dcDescription.length > 0) {
       <p class="card-text">
         {{ artwork.dcDescription[0] }}
