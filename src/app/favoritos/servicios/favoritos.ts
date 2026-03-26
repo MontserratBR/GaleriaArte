@@ -6,8 +6,6 @@ import { signal } from '@angular/core';
 })
 
 export class Favoritos {
-
-  // Signal que contiene la lista actual de favoritos
   private favoritosKey = environment.STORAGE_KEY;
   public favoritos = signal<any[]>(this.obtenerDeStorage());
 
@@ -16,16 +14,14 @@ export class Favoritos {
     return data ? JSON.parse(data) : [];
   }
 
-  toggleFavorito(obra: any) {
+  actualizarFavorito(obra: any) {
     const actuales = this.favoritos();
     const existe = actuales.find(fav => fav.id === obra.id);
 
     let nuevaLista;
     if (existe) {
-      // Si existe, lo eliminamos
       nuevaLista = actuales.filter(fav => fav.id !== obra.id);
     } else {
-      // Si no existe, lo agregamos
       nuevaLista = [...actuales, obra];
     }
 

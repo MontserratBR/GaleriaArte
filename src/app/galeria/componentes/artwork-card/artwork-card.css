@@ -20,3 +20,10 @@ img {
 .corazon-click:active {
   transform: scale(1.4); /* El corazón se agranda un poco al hacerle click */
 }
+.descripcion-corta {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Número de renglones exactos */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

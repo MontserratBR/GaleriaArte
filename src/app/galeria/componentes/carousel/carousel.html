@@ -2,18 +2,17 @@
   <div class="carousel-inner">
     @for (obra of limitArtworks(); track obra.id; let i = $index) {
       <div class="carousel-item" [class.active]="i === 0">
-        <img [src]="obra.edmPreview[0]" class="d-block w-100" [alt]="obra.title[0]" style=" object-fit: cover;">
+        <img [src]="obra.edmPreview[0]" class="d-block w-100" [alt]="obra.title[0]" >
         <div class="carousel-caption d-none d-md-block">
           <h5 class="bg-dark d-inline-block px-2">{{ obra.title[0] }}</h5>
         </div>
       </div>
     }
   </div>
-  
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>

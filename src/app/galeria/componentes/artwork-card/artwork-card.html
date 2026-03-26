@@ -8,16 +8,21 @@
     </button>
    
     @if (artwork.dcDescription && artwork.dcDescription.length > 0) {
-      <p class="card-text">
+      <p class="card-text descripcion-corta flex-grow-1">
         {{ artwork.dcDescription[0] }}
       </p>
+      <div class="mb-3">
+        <button (click)="verMasInfo()" class="btn btn-outline-primary btn-sm">
+          Más info
+        </button>
+      </div>
     } @else {
-      <p class="no-description card-text" >No hay descripción disponible para esta obra.</p>
+      <p class="no-description card-text flex-grow-1" >No hay descripción disponible para esta obra.</p>
     }
 
-    <p class="author">
+    <p class="author mb-0 mt-auto">
       <strong>Autor:</strong> 
-      {{ artwork.dcCreator ? artwork.dcCreator[0] : 'Autor desconocido' }}
+      {{ artwork.dcCreator ? artwork.dcCreator[0] : 'Desconocido' }}
     </p>
 
   </div>

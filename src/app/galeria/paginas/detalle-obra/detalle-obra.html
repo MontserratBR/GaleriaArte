@@ -1,1 +1,39 @@
-<p>detalle-obra works!</p>
+<app-menu-principal></app-menu-principal>
+<div class="container mt-5 pt-4 ">
+  @if (obra()) {
+    <div class="row align-items-center">
+       <div class="col-md-7 mb-4 mb-md-0">    
+          @if (obra()?.edmPreview?.[0]) {
+            <img [src]="obra()!.edmPreview![0]" 
+                 class="img-fluid rounded w-100 h-100" 
+                 [alt]="obra()?.title?.[0] || 'Obra de arte'">
+          } @else {
+            <div class="py-5 bg-secondary text-white rounded w-100">Sin vista previa disponible</div>
+          }
+      </div>
+      <div class="col-md-5">
+        <div class="ps-md-4">
+          <h1 class="display-5 fw-bold text-dark"> {{ obra()?.title?.[0] || 'Sin título' }}
+          </h1>
+          <p class="text-muted fs-5">
+            <strong>Autor:</strong> {{ obra()?.dcCreator ? obra()!.dcCreator![0] : 'Desconocido' }}
+          </p>
+          <hr>
+          <h4 class="mt-4">Descripción:</h4>
+          @if (obra()?.dcDescription?.[0]) {
+            <p class="lead text-secondary" style="text-align: justify;">
+              {{ obra()!.dcDescription![0] }}
+            </p>
+          } @else {
+            <p class="text-secondary">"Sin descripción disponible"</p>
+          }
+          <div class="mt-4">
+            <a routerLink="/inicio" class="btn btn-outline-secondary">
+              <i class="bi bi-arrow-left"></i> Volver a la galería
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

@@ -4,7 +4,7 @@ import { Europeana } from '../../servicios/europeana';
 import { ArtworkCard } from '../../componentes/artwork-card/artwork-card';
 import { Carousel } from '../../componentes/carousel/carousel';
 import { MenuPrincipal } from "../../../layout/menu-principal/menu-principal";
-import Masonry from 'masonry-layout'; // <-- 1. Importamos Masonry
+import Masonry from 'masonry-layout'; 
 
 @Component({
   selector: 'app-galeria',
@@ -14,20 +14,17 @@ import Masonry from 'masonry-layout'; // <-- 1. Importamos Masonry
 })
 export class Galeria implements OnInit, AfterViewInit {
   private europeanaService = inject(Europeana);
-
-  // Signals
   artworks = signal<any[]>([]);
   isLoading = signal(false);
   featuredArtworks = computed(() => this.artworks().slice(0, 5));
 
-  // Referencias y Variables para Masonry
-  grillaElement = viewChild<ElementRef>('miGrilla'); // <-- 2. Atrapamos el elemento del HTML
+  // Masonry
+  grillaElement = viewChild<ElementRef>('miGrilla'); 
   msnry?: Masonry;
 
   constructor() {
-    // <-- 3. Cada vez que 'artworks' cambie (carga inicial o infinite scroll), reacomodamos Masonry
     effect(() => {
-      this.artworks(); // Leemos el signal para registrar la dependencia del efecto
+      this.artworks(); 
       this.recargarMasonry();
     });
   }
@@ -44,7 +41,6 @@ export class Galeria implements OnInit, AfterViewInit {
     };
   }
 
-  // <-- 4. Una vez la vista se renderiza por primera vez, creamos la instancia de Masonry
   ngAfterViewInit() {
     this.inicializarMasonry();
   }
@@ -53,7 +49,7 @@ export class Galeria implements OnInit, AfterViewInit {
     const elemento = this.grillaElement()?.nativeElement;
     if (elemento) {
       this.msnry = new Masonry(elemento, {
-        itemSelector: '.col', // Selector de las columnas de bootstrap
+        itemSelector: '.col', 
         percentPosition: true,
       });
     }
@@ -64,7 +60,6 @@ export class Galeria implements OnInit, AfterViewInit {
 
   if (msnryInstance) {
     setTimeout(() => {
-      // 3. TypeScript ya no se quejará porque 'msnryInstance' es de lectura fija aquí
       msnryInstance!.reloadItems?.();
       msnryInstance!.layout?.();
     }, 200);

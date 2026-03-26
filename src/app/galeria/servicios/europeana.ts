@@ -10,7 +10,7 @@ import {EuropeanaResponse} from '../interfaces/resultado-consultas';
 })
 export class Europeana {
   private http = inject(HttpClient);
-  private famosos = ['Van Gogh', 'Velasquez', 'Da Vinci', 'Rembrandt', 'Monet', 'Goya'];
+  private famosos = ['Van Gogh', 'Velasquez', 'Da Vinci', 'Monet', 'Goya' ,'Salvador Dalí','Rembrandt'];
   private currentStart = 1;
 
   getArtworks(termino?: string, cargarMas: boolean = false): Observable<any[]> {
@@ -19,13 +19,8 @@ export class Europeana {
     }
 
     const query = termino || this.famosos[Math.floor(Math.random() * this.famosos.length)];
-  
     const filtros = '&qf=TYPE:IMAGE&qf=proxy_dc_description:*&reusability=open';
-    
     const url = `${environment.europeanaUrl}?query=${query}${filtros}&rows=20&start=${this.currentStart}&wskey=${environment.apiKey}`;
-
-    console.log('Solicitando URL:', url); // <-- Revisa esto en la consola F12
-
     return this.http.get<EuropeanaResponse>(url).pipe(
       map(res => {
         if (!res.items || res.items.length === 0) {
