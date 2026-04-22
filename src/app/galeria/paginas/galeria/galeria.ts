@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Europeana } from '../../servicios/europeana';
 import { ArtworkCard } from '../../componentes/artwork-card/artwork-card';
 import { Carousel } from '../../componentes/carousel/carousel';
-import { MenuPrincipal } from "../../../layout/menu-principal/menu-principal";
 import Masonry from 'masonry-layout'; 
 
 @Component({
   selector: 'app-galeria',
-  imports: [ArtworkCard, CommonModule, Carousel, MenuPrincipal],
+  imports: [ArtworkCard, CommonModule, Carousel],
   templateUrl: './galeria.html',
   styleUrl: './galeria.css',
 })

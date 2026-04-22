@@ -10,7 +10,7 @@ import {EuropeanaResponse} from '../interfaces/resultado-consultas';
 })
 export class Europeana {
   private http = inject(HttpClient);
-  private famosos = ['Van Gogh', 'Velasquez', 'Da Vinci', 'Monet', 'Goya' ,'Salvador Dalí','Rembrandt'];
+  private famosos = ['Van Gogh','Rembrandt'];
   private currentStart = 1;
 
   getArtworks(termino?: string, cargarMas: boolean = false): Observable<any[]> {

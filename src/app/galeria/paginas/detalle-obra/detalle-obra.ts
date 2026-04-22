@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, signal, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
-import { MenuPrincipal } from '../../../layout/menu-principal/menu-principal';
+
 
 @Component({
   selector: 'app-detalle-obra',
-  imports: [CommonModule, RouterLink, MenuPrincipal],
+  imports: [CommonModule, RouterLink],
   templateUrl: './detalle-obra.html',
   styleUrl: './detalle-obra.css',
 })

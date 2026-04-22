@@ -2,12 +2,11 @@ import { Component,AfterViewInit, viewChild, ElementRef, effect } from '@angular
 import { inject } from '@angular/core';
 import { Favoritos } from '../../servicios/favoritos';
 import { ArtworkCard } from '../../../galeria/componentes/artwork-card/artwork-card';
-import { MenuPrincipal } from '../../../layout/menu-principal/menu-principal';
 import Masonry from 'masonry-layout';
 
 @Component({
   selector: 'app-pagina-fav',
-  imports: [ArtworkCard, MenuPrincipal],
+  imports: [ArtworkCard],
   templateUrl: './pagina-fav.html',
   styleUrl: './pagina-fav.css',
 })

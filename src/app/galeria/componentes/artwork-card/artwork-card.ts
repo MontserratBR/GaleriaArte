@@ -14,6 +14,7 @@ export class ArtworkCard {
  @Input({ required: true }) artwork: any;
  private favService = inject(Favoritos);
  private router = inject(Router);
+ 
  verMasInfo() {
   this.router.navigate(['/detalle-obra'], {
     state: { dataObra: this.artwork }

@@ -8,5 +8,4 @@ export interface Artwork {
   edmPreview: string[]; 
   dcCreator?: string[];
   dcDescription?: string[];
-  
 }
